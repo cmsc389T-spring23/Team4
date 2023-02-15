@@ -2,8 +2,6 @@ package pacman;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-import com.sun.jdi.Location;
-
 public class Ghost {
   String myName;
   Location myLoc;
