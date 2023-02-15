@@ -20,6 +20,17 @@ public class PacMan {
   }
 
   public boolean move() {
+
+    ArrayList<Location> valid_moves = get_valid_moves();
+
+    if (valid_moves != null && !valid_moves.isEmpty()) {
+
+      // picks a random move from the list of valid moves
+      int random_index = (int) (Math.random() * valid_moves.size());
+      Location move_to = valid_moves.get(random_index);
+      this.myLoc = move_to;
+      return myMap.move(this.myName, move_to, Map.Type.PACMAN);
+    }
     return false;
   }
 
