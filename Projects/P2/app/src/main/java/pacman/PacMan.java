@@ -24,6 +24,17 @@ public class PacMan {
   }
 
   public boolean is_ghost_in_range() {
+    int startX = myLoc.x - 1;
+    int startY = myLoc.y - 1;
+
+    for(int row = startX; row < startX + 3; row++)
+    {
+      for(int col = startY; col < startY + 3; col++)
+      {
+        if(myMap.getLoc(myLoc).contains(Map.Type.GHOST))
+          return true;
+      }
+    }
     return false;
   }
 
