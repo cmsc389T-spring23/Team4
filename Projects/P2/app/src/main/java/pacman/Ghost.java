@@ -31,7 +31,7 @@ public class Ghost {
     {
       for(int col = startY; col < startY + 3; col++)
       {
-        if(myMap.getLoc(myLoc).contains(Map.Type.PACMAN))
+        if(myMap.getLoc(new Location(row, col)).contains(Map.Type.PACMAN)) //checking location for pacman
           return true; //at least 1 pacman found
       }
     }
