@@ -24,14 +24,16 @@ public class PacMan {
   }
 
   public boolean is_ghost_in_range() {
-    int startX = myLoc.x - 1;
+    //going to start scan in a 3x3 grid starting from top left of pacman's location with pacman at center
+    int startX = myLoc.x - 1; 
     int startY = myLoc.y - 1;
 
+    //looking for ghost in surrounding area
     for(int row = startX; row < startX + 3; row++)
     {
       for(int col = startY; col < startY + 3; col++)
       {
-        if(myMap.getLoc(myLoc).contains(Map.Type.GHOST))
+        if(myMap.getLoc(new Location(row, col)).contains(Map.Type.GHOST)) //checking location (row,col)
           return true;
       }
     }
