@@ -31,7 +31,7 @@ public class PacMan {
 
 		for(Location move: potential_moves){
 			HashSet<Map.Type> check = myMap.getLoc(move);
-			if(!check.contains(Map.Type.WALL)){
+			if(!check.contains(Map.Type.WALL) && !check.isEmpty()){
 				to_ret.add(move);
 			}
 		}
