@@ -35,6 +35,9 @@ public class PacMan {
 				to_ret.add(move);
 			}
 		}
+		if(to_ret.size() == 0){
+			return null;
+		}
 		return to_ret;
 	}
 
