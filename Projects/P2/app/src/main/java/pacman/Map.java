@@ -66,24 +66,8 @@ public class Map {
   }
 
   public boolean attack(String Name) {
-    //this is assuming a ghost can only attack in cardinal directions
-
-    Location ghostLoc = locations.get(Name); //location of ghost
-
-    Location up = new Location(ghostLoc.x, ghostLoc.y + 1);
-    Location down = new Location(ghostLoc.x, ghostLoc.y - 1);
-    Location left = new Location(ghostLoc.x - 1, ghostLoc.y);
-    Location right = new Location(ghostLoc.x + 1, ghostLoc.y);
-
-    //checking if pacman is attackable (not checking for walls since pacman should not be able to be at same space as one)
-    if(getLoc(up).contains(Map.Type.PACMAN) || getLoc(down).contains(Map.Type.PACMAN) || getLoc(left).contains(Map.Type.PACMAN) || 
-        getLoc(right).contains(Map.Type.PACMAN))
-    {
-      gameOver = true;
-      return true;
-    }
-    else
-      return false;
+    gameOver = true;
+    return true;
   }
 
   public JComponent eatCookie(String name) {
