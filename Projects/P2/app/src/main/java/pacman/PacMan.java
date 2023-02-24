@@ -20,9 +20,16 @@ public class PacMan {
   }
 
   public boolean move() {
+    ArrayList<Location> valid_moves = get_valid_moves();
+    if (valid_moves != null && !valid_moves.isEmpty()) {
+
+      // picks a random move from the list of valid moves
+      this.myLoc = valid_moves.get((int) (Math.random() * valid_moves.size()));
+      return myMap.move(this.myName, this.myLoc, Map.Type.PACMAN);
+    }
     return false;
   }
-
+  
   public boolean is_ghost_in_range() {
     //going to start scan in a 3x3 grid starting from top left of pacman's location with pacman at center
     int startX = myLoc.x - 1; 
