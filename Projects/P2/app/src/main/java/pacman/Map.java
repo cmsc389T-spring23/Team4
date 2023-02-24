@@ -1,6 +1,8 @@
 package pacman;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Locale;
+
 import javax.swing.JComponent;
 
 public class Map {
@@ -64,8 +66,8 @@ public class Map {
   }
 
   public boolean attack(String Name) {
-    // update gameOver
-    return false;
+    gameOver = true;
+    return true;
   }
 
   public JComponent eatCookie(String name) {
