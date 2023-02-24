@@ -22,10 +22,8 @@ public class Ghost {
 
     // picks a random location from the list of valid moves
     if (valid_moves != null && !valid_moves.isEmpty()) {
-      int random_index = (int) (Math.random() * valid_moves.size());
-      Location move_to = valid_moves.get(random_index);
-      this.myLoc = move_to;
-      return myMap.move(this.myName, move_to, Map.Type.GHOST);
+      this.myLoc = valid_moves.get((int) (Math.random() * valid_moves.size()));
+      return myMap.move(this.myName, this.myLoc, Map.Type.GHOST);
     }
     return false;
   }
