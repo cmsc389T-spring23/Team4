@@ -15,6 +15,6 @@ public class TestGhostAttack extends TestCase {
 	//a ghost is not nearby pacman
 	not_near= farGhost.attack();
 
-    	return near && !not_near;
+    	return near!=null && not_near==null;
   }
 }
