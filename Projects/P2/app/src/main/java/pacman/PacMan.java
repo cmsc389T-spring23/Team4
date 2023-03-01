@@ -28,10 +28,11 @@ public class PacMan {
   }
 
   public JComponent consume() {
-    if(map.getLoc(myLoc).contains(Map.Type.COOKIE)){
-	return map.eatCookie(myName);
-    } else {
-	return null;
+	  HashSet<Type> locations = map.getLoc(myLoc);
+	  if(locations!=null && locations.contains(Map.Type.COOKIE)){
+		return map.eatCookie(myName);
+    	} else {
+		return null;
     }
   }
 }
