@@ -2,6 +2,7 @@ package pacman;
 import java.io.*;
 import junit.framework.*;
 import java.awt.Color;
+import java.util.ArrayList;
 
 public class TestGhostValidMoves extends TestCase {
 
@@ -9,11 +10,9 @@ public class TestGhostValidMoves extends TestCase {
 	  
 	  NoFrame frame = new NoFrame();
 
-	  frame.addGhost(new Location(0,0));
+	  Ghost ghostTest = frame.addGhost(new Location(0,0),"test_ghost",Color.RED);
 
-	  ArrayList<Location> check = new ArrayList<Location>();
-
-	  check = frame.ghost.get_valid_moves();
+	  ArrayList<Location> check = ghostTest.get_valid_moves();
 
 	  //check if out of bounds move is valid. should be false
 	  assertFalse(check.contains(new Location(-1, 0)));
