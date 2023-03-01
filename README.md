@@ -25,7 +25,10 @@ If you are using Powershell use:
 
 ### move
 
-###is_ghost_in_range
+- **Implementation**: This method creates a list of valid moves, and randomly chooses one of the moves in that list, using `Math.random()`. The method returns true if the `Map.move()` call returns true, or false otherwise.
+- **Testing**: A simple test was created to test the movement of Pacman. A Pacman is created at location (0, 0) in an empty map, and `move()` is called on Pacman five times, and checks if it returns true each time.
+
+### is_ghost_in_range
 - **Type**: `() -> Bool`
 - **Implementation**: This method scans a 3x3 grid of locations with pacman at the center. If any ghost is within the bounds of this grid, this method returns true and returns false otherwise.
 - **Test Description**: Two tests were created. The first one creates a pacman at location (10,10), a ghost at location (9,9), and ensures is_ghost_in_range() returns true. The second test creates a pacman at location (1,1), a ghost at location (3,3) and makes sure is_ghost_in_range() returns false.
@@ -42,6 +45,9 @@ For Testing, I initalized a frame with pacman and a cookie at the same location.
 
 ### ghost-move
 
+- **Implementation**: Similar to `Pacman.move()`, `Ghost.move()` creates a list of valid moves, and randomly picks a move to go to using `Math.random()`. The method returns true if the `Map.move()` call returns true, and false otherwise.
+- **Testing**: Similar to `Pacman.move()`, a simple test was created to test the movement of a ghost. A ghost is created at location (0, 0), and `move()` is called on the ghost five times, and should return true each time.
+
 ### is_pacman_in_range
 
 ### attack
@@ -55,6 +61,8 @@ For Testing I initalized two frames, one with a ghost near pacman, and one that 
 ### move
 
 ### getLoc
+- **Implementation**: `Map.getLoc()` returns the set of types on the field. The method creates a set and adds all of the types in the location `loc` from the hashmap `field`.
+- **Testing**: A simple test was created to test `Map.getLoc()`. A Pacman is created at location (0, 0), and `getLoc` is called on the location (0, 0) to check if a Pacman type is present at that location.
 
 ### attack
 
