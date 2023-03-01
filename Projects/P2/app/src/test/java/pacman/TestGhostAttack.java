@@ -9,7 +9,7 @@ public class TestGhostAttack extends TestCase {
 	NoFrame frame = new NoFrame();
 	NoFrame frame2 = new NoFrame();
 	PacMan pacman = frame.addPacMan(new Location(1,1));
-	PacMan2= frame2.addPacMan(new Location(1,1));
+	PacMan pacman2= frame2.addPacMan(new Location(1,1));
 	Ghost ghost = frame.addGhost(new Location(1,2),"blinky",Color.red);
 	//a ghost is nearby pacman
 	boolean near = ghost.attack();
