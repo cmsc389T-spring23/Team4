@@ -31,7 +31,7 @@ If you are using Powershell use:
 ### is_ghost_in_range
 - **Type**: `() -> Bool`
 - **Implementation**: This method scans a 3x3 grid of locations with pacman at the center. If any ghost is within the bounds of this grid, this method returns true and returns false otherwise.
-- **Test Description**: Two tests were created. The first one creates a pacman at location (10,10), a ghost at location (9,9), and ensures is_ghost_in_range() returns true. The second test creates a pacman at location (1,1), a ghost at location (3,3) and makes sure is_ghost_in_range() returns false.
+- **Testing**: Two tests were created. The first one creates a pacman at location (10,10), a ghost at location (9,9), and ensures is_ghost_in_range() returns true. The second test creates a pacman at location (1,1), a ghost at location (3,3) and makes sure is_ghost_in_range() returns false.
 
 ### consume
 - **Type** `() -> JComponent`
@@ -48,6 +48,9 @@ If you are using Powershell use:
 - **Testing**: Similar to `Pacman.move()`, a simple test was created to test the movement of a ghost. A ghost is created at location (0, 0), and `move()` is called on the ghost five times, and should return true each time.
 
 ### is_pacman_in_range
+- **Type**: `() -> Boolean` 
+- **Implementation**: This method scans a 3x3 grid of locations with the ghost at the center. If pacman is within this grid, is_pacman_in_range() will return true and will return false otherwise.
+- **Testing**: The first test creates a pacman and a ghost one cell apart from each other and ensures that is_pacman_in_range() returns true. The second test places a pacman and a ghost 2 cells apart and ensures that is_pacman_in_range() returns false.
 
 ### attack
 - **Type**: `() -> Boolean` 
@@ -63,6 +66,9 @@ If you are using Powershell use:
 - **Testing**: A simple test was created to test `Map.getLoc()`. A Pacman is created at location (0, 0), and `getLoc` is called on the location (0, 0) to check if a Pacman type is present at that location.
 
 ### attack
+- **Type**: `() -> Boolean` 
+- **Implementation**: This method is called when is_pacman_in_range() returns true in Ghost.attack() and returns whether or not the attack was succesful.
+- **Testing**: The first test is testing for diagonal attacks. The second test places a ghost out of range of pacman and ensures that the attack will fail. The third test is making sure an attack works when pacman and ghost are next to each other.
 
 ### eatCookie
 - **Type**: `(String name) -> JComponent`
