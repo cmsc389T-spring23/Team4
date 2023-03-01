@@ -11,13 +11,16 @@ public class TestGhostValidMoves extends TestCase {
 	  NoFrame frame = new NoFrame();
 
 	  Ghost ghostTest = frame.addGhost(new Location(0,0),"test_ghost",Color.RED);
-
 	  ArrayList<Location> check = ghostTest.get_valid_moves();
 
-	  //check if out of bounds move is valid. should be false
-	  assertFalse(check.contains(new Location(-1, 0)));
+	  //check if no valid moves/does not exist
+	  assertTrue(!check);
+
+	  ghostTest = frame.addGhost(new Location(5,5),"test_ghost2",Color.BLUE);
+	  check = ghostTest.get_valid_moves();
+
 	  //check if valid move is in list
-	  assertTrue(check.contains(new Location(1,0)));
+	  assertTrue(check.contains(new Location(4,5)));
 	  
 	  return;
   }
