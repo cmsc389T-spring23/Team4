@@ -23,6 +23,10 @@ If you are using Powershell use:
 
 ### get_valid_moves
 
+- **Type**: `() -> ArrayList<Location>`
+- **Implementation**: This method fetches a list a valid moves by using the `getLoc()` function to grab locations that are not walls or out of bound. The map is used to grab the properties of each location.
+- **Testing**: A Pacman is created at various locations and the method is called on the object. The ArrayList is tested for certain moves (5,5) or if it exists at all (0,0). 
+
 ### move
 
 - **Implementation**: This method creates a list of valid moves, and randomly chooses one of the moves in that list, using `Math.random()`. The method returns true if the `Map.move()` call returns true, or false otherwise.
@@ -41,7 +45,9 @@ If you are using Powershell use:
 ## Ghost Class
 
 ### get_valid_moves
-
+- **Type**: `() -> ArrayList<Location>`
+- **Implementation**: This method fetches a list a valid moves by using the `getLoc()` function to grab locations that are not walls or out of bound.
+- **Testing**: A ghost was created at various locations with the method called upon it. The list should be nonexistent (at (0,0)) or contain certain locations to work properly(at (5,5)).
 ### ghost-move
 
 - **Implementation**: Similar to `Pacman.move()`, `Ghost.move()` creates a list of valid moves, and randomly picks a move to go to using `Math.random()`. The method returns true if the `Map.move()` call returns true, and false otherwise.
@@ -57,7 +63,9 @@ If you are using Powershell use:
 ## Map Class
 
 ### move
-
+- **Type**: `(String, Location, Type) -> Boolean`
+- **Implementation**: This method takes in the new location of an object on a map and updates every object that holds its position. The objects that contain the previous positions are fetched and modififed. It returns false if that object does not exist on the map and true if everything gets changed.
+- **Testing**: A test was created by having two PacMan objects created. One was initialized on the map while the other was independent of it. A valid location was sent to move the objects with the expectation that only the PacMan on the map would be moved as the other did not exist in the game field.
 ### getLoc
 - **Implementation**: `Map.getLoc()` returns the set of types on the field. The method creates a set and adds all of the types in the location `loc` from the hashmap `field`.
 - **Testing**: A simple test was created to test `Map.getLoc()`. A Pacman is created at location (0, 0), and `getLoc` is called on the location (0, 0) to check if a Pacman type is present at that location.
