@@ -9,17 +9,17 @@ public class TestMapMove extends TestCase {
 
 	  NoFrame frame= new NoFrame();
 
-	  frame.addPacMan(New Location(3,3));
+	  frame.addPacMan(new Location(3,3));
 
-	  Pacman test = new PacMan("test",New Location(5,5), frame.myMap);
+	  PacMan test = new PacMan("test",new Location(5,5), frame.getMap());
 
 	  Location valid_move = new Location(3,4);
 	  Location invalid_move = new Location(5,6);
 
 	  //Tests for Map move. The first should pass due to being on the map already
-	  assertTrue(myMap.move("pacman",valid_move,Map.Type.PACMAN));
+	  assertTrue(frame.getMap().move("pacman",valid_move,Map.Type.PACMAN));
 	  //Should not pass due to not being an object on the map prior
-	  assertFalse(myMap.move("test", invalid_move, Map.Type.PACMAN));
+	  assertFalse(frame.getMap().move("test", invalid_move, Map.Type.PACMAN));
 	  
 	  return;
   }
