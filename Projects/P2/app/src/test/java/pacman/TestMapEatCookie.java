@@ -2,6 +2,7 @@ package pacman;
 import java.io.*;
 import junit.framework.*;
 import java.awt.Color;
+import javax.swing.JComponent;
 
 public class TestMapEatCookie extends TestCase {
 
