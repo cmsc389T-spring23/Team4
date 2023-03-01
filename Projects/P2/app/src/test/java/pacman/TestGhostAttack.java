@@ -18,6 +18,6 @@ public class TestGhostAttack extends TestCase {
 	boolean not_near= farGhost.attack();
 	assertTrue(near==true);
 	assertTrue(not_near==false);
-    	return
+    	return;
   }
 }
