@@ -11,6 +11,7 @@
 gradle build
 gradle run
 ```
+
 If you are using Powershell use:
 ```bash
 .\gradlew build
@@ -24,7 +25,10 @@ If you are using Powershell use:
 
 ### move
 
-### us_ghost_in_range
+###is_ghost_in_range
+- **Type**: `() -> Bool`
+- **Implementation**: This method scans a 3x3 grid of locations with pacman at the center. If any ghost is within the bounds of this grid, this method returns true and returns false otherwise.
+- **Test Description**: Two tests were created. The first one creates a pacman at location (10,10), a ghost at location (9,9), and ensures is_ghost_in_range() returns true. The second test creates a pacman at location (1,1), a ghost at location (3,3) and makes sure is_ghost_in_range() returns false.
 
 ### consume
 
@@ -58,4 +62,3 @@ For Testing I initalized two frames, one with a ghost near pacman, and one that 
 This method takes in a string for pacman's name and will determine if pacman is able to eat a cookie on the map. If so, it will return the cookie component, remove that cookie's location from the field, remove it from the compnents list, and remove its location from the list of locations. It will also increment the score by one. It will return null if it doesn't find a cookie at pacman's location.
 
 The testing for this method is very similar to pacman's consume in that create a frame where pacman spawns ontop of a cookie and we call the eatCookie method to check to see if he returns a component, and if the score is incremented. If we call it a second time, we also indirecly check to see if the fields are removed and we check for null once the method returns. Additionally we also check and make sure the score is not incremented as pacman is not suppose to eat a cookie on the second method call.
-
