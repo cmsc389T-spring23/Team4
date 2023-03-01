@@ -6,7 +6,7 @@
 1. Navigate to the P2 directory
 2. Run the following command in the terminal:
 ```java
-[comment]: add the commands here and remove this comment
+gradle run
 ```
 ##PacMan Class
 ###get_valid_moves
