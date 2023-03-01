@@ -16,6 +16,7 @@ public class TestPacManConsume extends TestCase {
 	//check to see if cookie is not present/consume has removed the cookie in that location
 	noCookie= pacman.consume();
 	if(noCookie) System.out.println("No Cookie present, but was returned/never removed");	
-	return cookie!= null && noCookie==null;
+	assertTrue(cookie!= null);
+	assertTrue(noCookie==null);
   }
 }
