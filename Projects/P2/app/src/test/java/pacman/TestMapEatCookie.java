@@ -15,6 +15,10 @@ public class TestMapEatCookie extends TestCase {
 	  //should return null and not increment
 	  noCookie= map.eatCookie("pacman");
 	  noincremented= map.getCookies();
-	  return cookie!=null && noCookie==null && (incremented==1) && (noincremented==1);
+
+	  assertTrue(cookie!=null);
+	  assertTrue(noCookie==null);
+	  assertTrue(incremented==1);
+	  assertTrue(noincremented==1);
   }
 }
