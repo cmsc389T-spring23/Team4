@@ -98,7 +98,7 @@ public class Map {
     
     Location pacmanLoc = locations.get(name);
     HashSet<Type> onLoc = getLoc(pacmanLoc);
-    if(gonLoc.contains(Map.Type.COOKIE)){   
+    if(onLoc.contains(Map.Type.COOKIE)){   
     	cookies++;
 	String cookieName= "tok_x"+pacmanLoc.x+"_y"+pacmanLoc.y; //cookie ID
 	onLoc.remove(Map.Type.COOKIE); //removes cookie from the hashset of stuff on the current location
