@@ -19,7 +19,6 @@ public class PacMan {
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-
 		int curr_x = myLoc.x;
 		int curr_y = myLoc.y;
 		// Check each location to see if a wall resides within. If not, add to ArrayList
@@ -50,7 +49,6 @@ public class PacMan {
       return myMap.move(this.myName, this.myLoc, Map.Type.PACMAN);
     }
     return false;
-	
   }
   
   public boolean is_ghost_in_range() {
