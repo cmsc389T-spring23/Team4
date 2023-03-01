@@ -14,7 +14,7 @@ public class TestPacManValidMoves extends TestCase {
 	  ArrayList<Location> check = test.get_valid_moves();
 
 	  //check if check does not exist due to having an invalid location
-	  assertTrue(!check);
+	  assertTrue(check == null);
 
 	  test = frame.addPacMan(new Location(5,5));
 	  check = test.get_valid_moves();

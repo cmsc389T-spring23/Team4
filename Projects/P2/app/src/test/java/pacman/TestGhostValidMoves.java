@@ -14,7 +14,7 @@ public class TestGhostValidMoves extends TestCase {
 	  ArrayList<Location> check = ghostTest.get_valid_moves();
 
 	  //check if no valid moves/does not exist
-	  assertTrue(!check);
+	  assertTrue(check == null);
 
 	  ghostTest = frame.addGhost(new Location(5,5),"test_ghost2",Color.BLUE);
 	  check = ghostTest.get_valid_moves();
