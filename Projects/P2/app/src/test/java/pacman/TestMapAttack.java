@@ -19,8 +19,8 @@ public class TestMapAttack extends TestCase {
     PacMan pacman3 = frame.addPacMan(new Location(1, 1));
     Ghost ghost3 = frame.addGhost(new Location(2, 1), "name", Color.red);
     
-    //assertFalse(frame.getMap().attack(ghost1.myName)); //should not be able to attack diagonally
-    //assertFalse(frame.getMap().attack(ghost2.myName)); //out of range
-    //assertTrue(frame.getMap().attack(ghost3.myName));
+    assertFalse(frame.getMap().attack(ghost1.myName)); //should not be able to attack diagonally
+    assertFalse(frame.getMap().attack(ghost2.myName)); //out of range
+    assertTrue(frame.getMap().attack(ghost3.myName));
   }
 }
