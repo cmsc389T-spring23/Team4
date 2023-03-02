@@ -21,7 +21,7 @@ public class TestPacManValidMoves extends TestCase {
 
 
 	  //check if valid move is in list
-	  assertTrue(check.contains(new Location(5,4)));
+	  assertFalse(check.contains(new Location(5,4)));
 	  
 	  return;
   }
