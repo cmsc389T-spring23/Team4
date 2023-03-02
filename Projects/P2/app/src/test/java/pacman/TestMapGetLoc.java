@@ -12,5 +12,8 @@ public class TestMapGetLoc extends TestCase {
     PacMan pacman = frame.addPacMan(loc);
     Map map = frame.getMap();
     assertTrue(map.getLoc(loc).contains(Map.Type.PACMAN));
+    
+    assertTrue(map.getLoc(new Location(-1, 0)).contains(Map.Type.WALL));
+    assertTrue(map.getLoc(new Location(1, 1)).contains(Map.Type.COOKIE));
   }
 }
