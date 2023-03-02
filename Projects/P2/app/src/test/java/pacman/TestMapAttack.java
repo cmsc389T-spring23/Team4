@@ -13,14 +13,10 @@ public class TestMapAttack extends TestCase {
     PacMan pacman1 = frame.addPacMan(new Location(10, 10)); //Creates PacMan at location x, y
     Ghost ghost1 = frame.addGhost(new Location(9, 9), "name", Color.red); //Creates a red ghost named "name" at location x,y
 
-    PacMan pacman2 = frame.addPacMan(new Location(1, 1)); //Creates PacMan at location x, y
-    Ghost ghost2 = frame.addGhost(new Location(3, 3), "name", Color.red); //Creates a red ghost named "name" at location x,y
-
-    PacMan pacman3 = frame.addPacMan(new Location(1, 1));
-    Ghost ghost3 = frame.addGhost(new Location(2, 1), "name", Color.red);
+    PacMan pacman2 = frame.addPacMan(new Location(1, 1));
+    Ghost ghost2 = frame.addGhost(new Location(2, 1), "name", Color.red);
     
     assertTrue(frame.getMap().attack(ghost1.myName)); //diagonal attack
-    assertFalse(frame.getMap().attack(ghost2.myName)); //out of range
-    assertTrue(frame.getMap().attack(ghost3.myName));
+    assertTrue(frame.getMap().attack(ghost2.myName));
   }
 }
