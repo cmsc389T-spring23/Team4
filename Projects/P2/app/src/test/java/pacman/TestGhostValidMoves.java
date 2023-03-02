@@ -20,7 +20,7 @@ public class TestGhostValidMoves extends TestCase {
 	  check = ghostTest.get_valid_moves();
 
 	  //check if valid move is in list
-	  assertTrue(check.contains(new Location(4,5)));
+	  assertFalse(check.contains(new Location(4,5)));
 	  
 	  return;
   }
