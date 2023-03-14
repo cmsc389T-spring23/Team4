@@ -16,7 +16,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Compile Java Classes
         working-directory: ./Projects/P2
-        run: ./gradlew build testClasses -x test
+        run: gradle build
   checkpaths: 
     runs-on: ubuntu-latest
     container: openjdk
