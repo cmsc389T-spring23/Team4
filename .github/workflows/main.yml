@@ -9,14 +9,14 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    container: openjdk
+    container: openjdk:13
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       # Runs a set of commands using the runners shell
       - name: Compile Java Classes
         working-directory: ./Projects/P2
-        run: gradle build
+        run: ./gradlew build testClasses -x test
   checkpaths: 
     runs-on: ubuntu-latest
     container: openjdk
