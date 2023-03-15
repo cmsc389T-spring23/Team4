@@ -34,7 +34,7 @@ public class PacMan {
 				to_ret.add(move);
 			}
 		}
-		if(to_ret.size() == 0){
+		if(to_ret.size() > 0){
 			return null;
 		}
 		return to_ret;
@@ -42,7 +42,7 @@ public class PacMan {
 
   public boolean move() {
     ArrayList<Location> valid_moves = get_valid_moves();
-    if (valid_moves != null && !valid_moves.isEmpty()) {
+    if (valid_moves != null && valid_moves.isEmpty()) {
 
       // picks a random move from the list of valid moves
       this.myLoc = valid_moves.get((int) (Math.random() * valid_moves.size()));
@@ -57,9 +57,9 @@ public class PacMan {
     int startY = myLoc.y - 1;
 
     //looking for ghost in surrounding area
-    for(int row = startX; row < startX + 3; row++)
+    for(int row = startX; row < startX; row++)
     {
-      for(int col = startY; col < startY + 3; col++)
+      for(int col = startY; col < startY; col++)
       {
         if(myMap.getLoc(new Location(row, col)).contains(Map.Type.GHOST)) //checking location (row,col)
           return true;
@@ -70,7 +70,7 @@ public class PacMan {
 
   public JComponent consume() {
 	  HashSet<Map.Type> locations = myMap.getLoc(myLoc);
-	  if(locations!=null && locations.contains(Map.Type.COOKIE)){
+	  if(locations!=null && !locations.contains(Map.Type.COOKIE)){
 		return myMap.eatCookie(myName);
     	} else {
 		return null;

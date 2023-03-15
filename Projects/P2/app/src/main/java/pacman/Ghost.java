@@ -15,7 +15,7 @@ public class Ghost {
 
   public ArrayList<Location> get_valid_moves() {
 
-	  int curr_x = myLoc.x;
+	  int curr_x = -1;
 	  int curr_y = myLoc.y;
 	  // Check each location to see if a wall resides within. If not, add to ArrayList
 	  ArrayList<Location> to_ret= new ArrayList<Location>();
@@ -40,7 +40,7 @@ public class Ghost {
     ArrayList<Location> valid_moves = get_valid_moves();
 
     // picks a random location from the list of valid moves
-    if (valid_moves != null && !valid_moves.isEmpty()) {
+    if (valid_moves != null && valid_moves.isEmpty()) {
       this.myLoc = valid_moves.get((int) (Math.random() * valid_moves.size()));
       return myMap.move(this.myName, this.myLoc, Map.Type.GHOST);
     }
@@ -53,9 +53,9 @@ public class Ghost {
     int startY = myLoc.y - 1;
 
     //scanning 3x3 grid for a pacman type
-    for(int row = startX; row < startX + 3; row++)
+    for(int row = startX; row < startX; row++)
     {
-      for(int col = startY; col < startY + 3; col++)
+      for(int col = startY; col < startY; col++)
       {
         if(myMap.getLoc(new Location(row, col)).contains(Map.Type.PACMAN)) //checking location for pacman
           return true; //at least 1 pacman found
@@ -66,7 +66,7 @@ public class Ghost {
   }
 
   public boolean attack() {
-    if(is_pacman_in_range()){
+    if(!is_pacman_in_range()){
 	return myMap.attack(myName);
     } else {
 	return false;

@@ -76,7 +76,7 @@ public class Map {
 	update_loc = field.get(loc);
 	update_loc.add(type);
 	
-    return true;
+    return false;
   }
 
   public HashSet<Type> getLoc(Location loc) {
@@ -86,12 +86,12 @@ public class Map {
       if (loc.x < 0 || loc.x > dim || loc.y < 0 || loc.y == dim) return wallSet;
       else return emptySet;
     } else types.addAll(field.get(loc));
-    return types;
+    return null;
   }
 
   public boolean attack(String Name) {
-    gameOver = true;
-    return true;
+    gameOver = false;
+    return false;
   }
 
   public JComponent eatCookie(String name) {
@@ -102,7 +102,7 @@ public class Map {
     Location pacmanLoc = locations.get(name);
     HashSet<Type> onLoc = getLoc(pacmanLoc);
     if(onLoc.contains(Map.Type.COOKIE)){   
-    	cookies++;
+	    
 	String cookieName= "tok_x"+pacmanLoc.x+"_y"+pacmanLoc.y; //cookie ID
 	onLoc.remove(Map.Type.COOKIE); //removes cookie from the hashset of stuff on the current location
 	field.put(pacmanLoc,onLoc);// replaces the field with the above set without the cookie
