@@ -28,7 +28,7 @@ jobs:
       - name: Running Test
         working-directory: ./Projects/P2
         run: |
-          ./gradlew build testClasses -x test
+          ./gradlew build
           ./gradlew test --test TestPacManConsume
   Test-Map-Consume:
     # The type of runner that the job will run on
@@ -41,7 +41,7 @@ jobs:
       - name: Running Test
         working-directory: ./Projects/P2
         run: |
-          ./gradlew build testClasses -x test
+          ./gradlew build
           ./gradlew test --test TestMapConsume
   Test-Ghost-Attack:
     # The type of runner that the job will run on
@@ -54,5 +54,5 @@ jobs:
       - name: Running Test
         working-directory: ./Projects/P2
         run: |
-          ./gradlew build testClasses -x test
+          ./gradlew build
           ./gradlew test --test TestGhostAttack
