@@ -29,7 +29,7 @@ jobs:
         working-directory: ./Projects/P2
         run: |
           ./gradlew build
-          ./gradlew test --test TestPacManConsume
+          ./gradlew test --parallel --tests TestPacManConsume
   Test-Map-Consume:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -42,7 +42,7 @@ jobs:
         working-directory: ./Projects/P2
         run: |
           ./gradlew build
-          ./gradlew test --test TestMapConsume
+          ./gradlew test --parallel --tests TestMapConsume
   Test-Ghost-Attack:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -55,4 +55,4 @@ jobs:
         working-directory: ./Projects/P2
         run: |
           ./gradlew build
-          ./gradlew test --test TestGhostAttack
+          ./gradlew test --parallel --tests TestGhostAttack
