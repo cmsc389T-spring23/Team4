@@ -27,7 +27,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Running Test
         working-directory: ./Projects/P2
-        run: ./gradlew test --test TestPacManConsume
+        run: |
+          ./gradlew build testClasses -x test
+          ./gradlew test --test TestPacManConsume
   Test-Map-Consume:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -38,7 +40,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Running Test
         working-directory: ./Projects/P2
-        run: ./gradlew test --test TestMapConsume
+        run: |
+          ./gradlew build testClasses -x test
+          ./gradlew test --test TestMapConsume
   Test-Ghost-Attack:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -49,4 +53,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Running Test
         working-directory: ./Projects/P2
-        run: ./gradlew test --test TestGhostAttack
+        run: |
+          ./gradlew build testClasses -x test
+          ./gradlew test --test TestGhostAttack
