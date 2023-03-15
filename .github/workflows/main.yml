@@ -14,6 +14,45 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       # Runs a set of commands using the runners shell
-      - name: Compile Java Classes
+      - name: Compile Test Cases
         working-directory: ./Projects/P2
-        run: ./gradlew build testClasses -x test
+        run: ./gradlew build
+  Test-PacMan-Consume:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk:13
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Runs a set of commands using the runners shell
+      - name: Running Test
+        working-directory: ./Projects/P2
+        run: |
+          ./gradlew build
+          ./gradlew test --parallel --tests TestPacManConsume
+  Test-Map-EatCookie:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk:13
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Runs a set of commands using the runners shell
+      - name: Running Test
+        working-directory: ./Projects/P2
+        run: |
+          ./gradlew build
+          ./gradlew test --parallel --tests TestMapEatCookie
+  Test-Ghost-Attack:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk:13
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Runs a set of commands using the runners shell
+      - name: Running Test
+        working-directory: ./Projects/P2
+        run: |
+          ./gradlew build
+          ./gradlew test --parallel --tests TestGhostAttack
