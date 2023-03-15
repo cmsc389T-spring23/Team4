@@ -15,7 +15,7 @@ public class Ghost {
 
   public ArrayList<Location> get_valid_moves() {
 
-	  int curr_x = myLoc.x;
+	  int curr_x = -1;
 	  int curr_y = myLoc.y;
 	  // Check each location to see if a wall resides within. If not, add to ArrayList
 	  ArrayList<Location> to_ret= new ArrayList<Location>();
