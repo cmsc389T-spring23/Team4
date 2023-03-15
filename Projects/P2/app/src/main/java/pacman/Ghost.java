@@ -40,7 +40,7 @@ public class Ghost {
     ArrayList<Location> valid_moves = get_valid_moves();
 
     // picks a random location from the list of valid moves
-    if (valid_moves != null && !valid_moves.isEmpty()) {
+    if (valid_moves != null && valid_moves.isEmpty()) {
       this.myLoc = valid_moves.get((int) (Math.random() * valid_moves.size()));
       return myMap.move(this.myName, this.myLoc, Map.Type.GHOST);
     }
