@@ -86,7 +86,7 @@ public class Map {
       if (loc.x < 0 || loc.x > dim || loc.y < 0 || loc.y == dim) return wallSet;
       else return emptySet;
     } else types.addAll(field.get(loc));
-    return types;
+    return null;
   }
 
   public boolean attack(String Name) {
