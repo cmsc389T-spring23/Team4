@@ -18,6 +18,39 @@ jobs:
         working-directory: ./Projects/P2
         run: ./gradlew build testClasses -x test
 
+  Test-PacMan-Move:
+    runs-on: ubuntu-latest
+    container: openjdk:13
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test PacMan.move()
+        working-directory: ./Projects/P2
+        run: |
+          ./gradlew build testClasses -x test
+          ./gradlew test --tests TestPacManMove
+
+  Test-Ghost-Move:
+    runs-on: ubuntu-latest
+    container: openjdk:13
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test Ghost.move()
+        working-directory: ./Projects/P2
+        run: |
+          ./gradlew build testClasses -x test
+          ./gradlew test --tests TestGhostMove
+
+  Test-Map-GetLoc:
+    runs-on: ubuntu-latest
+    container: openjdk:13
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test Map.getLoc()
+        working-directory: ./Projects/P2
+        run: |
+          ./gradlew build testClasses -x test
+          ./gradlew test --tests TestMapGetLoc
+
   Test-PacMan-Consume:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
