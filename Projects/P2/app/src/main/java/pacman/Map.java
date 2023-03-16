@@ -76,7 +76,7 @@ public class Map {
 	update_loc = field.get(loc);
 	update_loc.add(type);
 	
-    return false;
+    return true;
   }
 
   public HashSet<Type> getLoc(Location loc) {
@@ -86,7 +86,7 @@ public class Map {
       if (loc.x < 0 || loc.x > dim || loc.y < 0 || loc.y == dim) return wallSet;
       else return emptySet;
     } else types.addAll(field.get(loc));
-    return null;
+    return types;
   }
 
   public boolean attack(String Name) {
