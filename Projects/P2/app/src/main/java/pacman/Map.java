@@ -59,28 +59,28 @@ public class Map {
   public boolean move(String name, Location loc, Type type) {
     // update locations, components, and field
     // use the setLocation method for the component to move it to the new location
-    Location old_loc = locations.get(name);
 
-    if (old_loc == null) {
-      return false;
-    }
-    locations.put(name, loc);
-    JComponent comp = components.get(name);
-    if (comp == null) {
-      return false;
-    }
-    comp.setLocation(loc.x, loc.y);
+	Location old_loc = locations.get(name);
 
-    // updates old location to remove the type from the field
-    HashSet<Type> update_loc = field.get(old_loc);
-    update_loc.remove(type);
-    // updates new location to add type
-    update_loc = field.get(loc);
-    update_loc.add(type);
+	if(old_loc == null){
+		return false;
+	}
+	locations.put(name, loc);
+	JComponent comp = components.get(name);
+	if(comp == null){
+		return false;
+	}
+	comp.setLocation(loc.x, loc.y);
 
-    return false;
+	// updates old location to remove the type from the field
+	HashSet<Type> update_loc = field.get(old_loc);
+	update_loc.remove(type);
+	//updates new location to add type
+	update_loc = field.get(loc);
+	update_loc.add(type);
+	
+    return true;
   }
-
   public HashSet<Type> getLoc(Location loc) {
 
     HashSet<Type> types = field.get(loc);
