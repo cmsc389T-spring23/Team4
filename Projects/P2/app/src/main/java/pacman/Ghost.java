@@ -55,8 +55,8 @@ public class Ghost {
     int startY = myLoc.y - 1;
 
     // scanning 3x3 grid for a pacman type
-    for (int row = startX; row < startX; row++) {
-      for (int col = startY; col < startY; col++) {
+    for (int row = startX; row < startX + 3; row++) {
+      for (int col = startY; col < startY + 3; col++) {
         if (myMap.getLoc(new Location(row, col)).contains(Map.Type.PACMAN)) // checking location for pacman
           return true; // at least 1 pacman found
       }
