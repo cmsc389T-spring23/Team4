@@ -67,12 +67,12 @@ public class PacMan {
 		return false;
 	}
 
-	public JComponent consume() {
-		HashSet<Map.Type> locations = myMap.getLoc(myLoc);
-		if (locations != null && !locations.contains(Map.Type.COOKIE)) {
-			return myMap.eatCookie(myName);
-		} else {
-			return null;
-		}
-	}
+  public JComponent consume() {
+	  HashSet<Map.Type> locations = myMap.getLoc(myLoc);
+	  if(locations!=null && locations.contains(Map.Type.COOKIE)){
+		return myMap.eatCookie(myName);
+    	} else {
+		return null;
+    }
+  }
 }
