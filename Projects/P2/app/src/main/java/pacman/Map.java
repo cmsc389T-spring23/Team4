@@ -107,7 +107,9 @@ public class Map {
 	onLoc.remove(Map.Type.COOKIE); //removes cookie from the hashset of stuff on the current location
 	field.put(pacmanLoc,onLoc);// replaces the field with the above set without the cookie
 	locations.remove(cookieName);//removes the cookie from the locations
+	cookies++;
 	return components.remove(cookieName); //removes and returns the cookie component
+
 
     } else {
 	return null;

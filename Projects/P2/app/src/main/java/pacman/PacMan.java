@@ -70,7 +70,7 @@ public class PacMan {
 
   public JComponent consume() {
 	  HashSet<Map.Type> locations = myMap.getLoc(myLoc);
-	  if(locations!=null && !locations.contains(Map.Type.COOKIE)){
+	  if(locations!=null && locations.contains(Map.Type.COOKIE)){
 		return myMap.eatCookie(myName);
     	} else {
 		return null;
