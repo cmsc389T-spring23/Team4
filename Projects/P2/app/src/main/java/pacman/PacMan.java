@@ -42,8 +42,9 @@ public class PacMan {
 	public boolean move() {
 		ArrayList<Location> valid_moves = get_valid_moves();
     		if (valid_moves != null && !valid_moves.isEmpty()) {
-      		// picks a random move from the list of valid moves
-      		this.myLoc = valid_moves.get((int) (Math.random() * valid_moves.size()));
+      			// picks a random move from the list of valid moves
+      			this.myLoc = valid_moves.get((int) (Math.random() * valid_moves.size()));
+		}
 	}
 
 	public boolean is_ghost_in_range() {
